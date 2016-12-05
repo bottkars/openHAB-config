@@ -1,0 +1,12 @@
+//Groups
+
+Group ALL_PSM
+Group PSM_1_WZ "Steckdose1" <poweroutlet> (ALL_PSM)
+
+Switch PSM_1_WZ_SWITCH (PSM_1_WZ)  {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:3#STATE"}
+String PSM_1_WZ_COUNTER  <poweroutlet> (PSM_1_WZ) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#ENERGY_COUNTER"}
+String PSM_1_WZ_POWER   <poweroutlet> (PSM_1_WZ) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#POWER"}
+String PSM_1_WZ_aufnahme <poweroutlet> (PSM_1_WZ) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#CURRENT"}
+
+
+Switch Licht_EG_WZ      "Stehlampe"  (EG_WZ,ALL_PSM) {channel="homematic:HMIP-PS:16f9813e:00021569960DA3:3#STATE"}

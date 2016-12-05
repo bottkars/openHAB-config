@@ -1,0 +1,4 @@
+Group ALL_SYSTEM_INFO
+Group SYTEM_INFO "Syteminformationen" <poweroutlet> (ALL_SYSTEM_INFO)
+
+String OPENHAB_CPU_LOAD "CPU Load [%d %%]"(ALL_SYSTEM_INFO)  {channel="systeminfo:computer:openhab:cpu#load"}

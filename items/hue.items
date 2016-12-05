@@ -1,0 +1,95 @@
+//Groups
+Group ALL_HUE
+Group ALL_HUE_POWER
+Group ALL_HUE_ALERT
+Group Schlafzimmer_HUE_STRIP "HUE Strip Schlafzimmer" <colorwheel> (OG_Schlafzimmer, ALL_HUE)
+Group Couch_HUE_STRIP "HUE Strip Couch" <colorwheel> (EG_WZ, ALL_HUE)
+Group Kueche_HUE_STRIP "HUE Strip Kueche" <colorwheel> (EG_Kueche, ALL_HUE)
+Group Regal_Flur_OG_STRIP "HUE Strip Regal Flur" <colorwheel> (OG_Flur, ALL_HUE)
+Group WZli_HUE_IRIS "HUE Iris TV Links" <colorwheel> (EG_WZ, ALL_HUE)
+Group WZre_HUE_IRIS "HUE Iris TV Rechts" <colorwheel> (EG_WZ, ALL_HUE)
+Group Regal_EZ_HUE_LED "HUE LED EZ Bank" <colorwheel> (EG_Esszimmer, ALL_HUE)
+Group Fenster_EZ_HUE_LED "HUE LED Fenster EZ" <colorwheel> (EG_Esszimmer, ALL_HUE)
+Group BAD_HUE_BLOOM "HUE Bloom Bad" <colorwheel> (OG_BAD, ALL_HUE)
+Group HUE_SPOT_1_Kueche "HUE_SPOT_1_Kueche" <colorwheel> (EG_Kueche, ALL_HUE)
+Group HUE_SPOT_2_Kueche "HUE_SPOT_2_Kueche" <colorwheel> (EG_Kueche, ALL_HUE)
+
+
+//HUE_SPOT_1_Kueche
+//hue
+
+Color HUE_STRIP_Schlafzimmer_Color "Farbe" <colorwheel> (Schlafzimmer_HUE_STRIP) {channel="hue:0210:00178828a259:16:color"}
+Dimmer HUE_STRIP_Schlafzimmer_Dimmer "Helligkeit" (Schlafzimmer_HUE_STRIP) {channel="hue:0210:00178828a259:16:color"}
+Switch HUE_STRIP_Schlafzimmer_ONOFF "EIN"(Schlafzimmer_HUE_STRIP,ALL_HUE_POWER) {channel="hue:0210:00178828a259:16:color"}
+Dimmer HUE_STRIP_Schlafzimmer_TEMP "Temperatur" (Schlafzimmer_HUE_STRIP) {channel="hue:0210:00178828a259:16:color_temperature"}
+Switch HUE_STRIP_Schlafzimmer_Loop "Loop" (Schlafzimmer_HUE_STRIP) {channel="hue:0210:00178828a259:16:effect"}
+//hue
+
+Color HUE_STRIP_Couch_Color "Farbe" <colorwheel> (Couch_HUE_STRIP) {channel="hue:0210:00178828a259:12:color"}
+Dimmer HUE_STRIP_Couch_Dimmer "Helligkeit" (Couch_HUE_STRIP) {channel="hue:0210:00178828a259:12:color"}
+Switch HUE_STRIP_Couch_ONOFF "EIN"(Couch_HUE_STRIP,ALL_HUE_POWER) {channel="hue:0210:00178828a259:12:color"}
+Dimmer HUE_STRIP_Couch_TEMP	"Temperatur"(Couch_HUE_STRIP) {channel="hue:0210:00178828a259:12:color_temperature"}
+Switch HUE_STRIP_Couch_Loop "Loop" (Couch_HUE_STRIP) {channel="hue:0210:00178828a259:12:effect"}
+//hue
+
+Color HUE_STRIP_Kueche_Color "Farbe" <colorwheel> (Kueche_HUE_STRIP) {channel="hue:0200:00178828a259:3:color"}
+Dimmer HUE_STRIP_Kueche_Dimmer "Helligkeit" (Kueche_HUE_STRIP) {channel="hue:0200:00178828a259:3:color"}
+Switch HUE_STRIP_Kueche_ONOFF "EIN"(Kueche_HUE_STRIP,ALL_HUE_POWER) {channel="hue:0200:00178828a259:3:color"}
+Dimmer HUE_STRIP_Kueche_TEMP	"Temperatur"(Kueche_HUE_STRIP) {channel="hue:0200:00178828a259:3:color_temperature"}
+Switch HUE_STRIP_Kueche_Loop "Loop" (Kueche_HUE_STRIP) {channel="hue:0200:00178828a259:3:effect"}
+//hue
+Color HUE_STRIP_Regal_Flur_Color "Farbe" <colorwheel> (Regal_Flur_OG_STRIP) {channel="hue:0210:00178828a259:8:color"}
+Dimmer HUE_STRIP_Regal_Flur_Dimmer "Helligkeit" (Regal_Flur_OG_STRIP) {channel="hue:0210:00178828a259:8:color"}
+Switch HUE_STRIP_Regal_Flur_ONOFF "EIN"(Regal_Flur_OG_STRIP,ALL_HUE_POWER) {channel="hue:0210:00178828a259:8:color"}
+Dimmer HUE_STRIP_Regal_Flur_TEMP	"Temperatur"(Regal_Flur_OG_STRIP) {channel="hue:0210:00178828a259:8:color_temperature"}
+Switch HUE_STRIP_Regal_Flur_Loop "Loop" (Regal_Flur_OG_STRIP) {channel="hue:0210:00178828a259:8:effect"}
+
+//hue iris
+Color HUE_Iris_1_Color "Farbe" <colorwheel> (WZli_HUE_IRIS) {channel="hue:0200:00178828a259:5:color"}
+Dimmer HUE_Iris_1_Dimmer "Helligkeit" (WZli_HUE_IRIS) {channel="hue:0200:00178828a259:5:color"}
+Switch HUE_Iris_1_ONOFF "EIN"(WZli_HUE_IRIS,ALL_HUE_POWER) {channel="hue:0200:00178828a259:5:color"}
+Switch HUE_Iris_1_Loop "Loop" (WZli_HUE_IRIS) {channel="hue:0200:00178828a259:5:effect"}
+
+//hue iris
+Color HUE_Iris_2_Color "Farbe" <colorwheel> (WZre_HUE_IRIS) {channel="hue:0200:00178828a259:1:color"}
+Dimmer HUE_Iris_2_Dimmer "Helligkeit" (WZre_HUE_IRIS) {channel="hue:0200:00178828a259:1:color"}
+Switch HUE_Iris_2_ONOFF "EIN"(WZre_HUE_IRIS,ALL_HUE_POWER) {channel="hue:0200:00178828a259:1:color"}
+Switch HUE_Iris_2_Loop "Loop" (WZre_HUE_IRIS) {channel="hue:0200:00178828a259:1:effect"}
+
+//HUE LED hue:0210:00178828a259:8
+
+Color HUE_LED_1_EZ_Bank_Color "Farbe" <colorwheel> (Regal_EZ_HUE_LED) {channel="hue:0210:00178828a259:8:color"}
+Dimmer HUE_LED_1_EZ_Bank_Dimmer "Helligkeit" (Regal_EZ_HUE_LED) {channel="hue:0210:00178828a259:8:color"}
+Switch HUE_LED_1_EZ_Bank_ONOFF "EIN"(Regal_EZ_HUE_LED,ALL_HUE_POWER) {channel="hue:0210:00178828a259:8:color"}
+Dimmer HUE_LED_1_EZ_Bank_TEMP	"Temperatur"(Regal_EZ_HUE_LED) {channel="hue:0210:00178828a259:8:color_temperature"}
+Switch HUE_LED_1_EZ_Bank_Loop "Loop" (Regal_EZ_HUE_LED) {channel="hue:0210:00178828a259:8:effect"}
+
+//HUE LED hue:0210:00178828a259:9
+
+Color HUE_LED_2_EZ_Fenster_Color "Farbe" <colorwheel> (Fenster_EZ_HUE_LED) {channel="hue:0210:00178828a259:9:color"}
+Dimmer HUE_LED_2_EZ_Fenster_Dimmer "Helligkeit" (Fenster_EZ_HUE_LED) {channel="hue:0210:00178828a259:9:color"}
+Switch HUE_LED_2_EZ_Fenster_ONOFF "EIN"(Fenster_EZ_HUE_LED,ALL_HUE_POWER) {channel="hue:0210:00178828a259:9:color"}
+Dimmer HUE_LED_2_EZ_Fenster_TEMP	"Temperatur"(Fenster_EZ_HUE_LED) {channel="hue:0210:00178828a259:9:color_temperature"}
+Switch HUE_LED_2_EZ_Fenster_Loop "Loop" (Fenster_EZ_HUE_LED) {channel="hue:0210:00178828a259:9:effect"}
+
+//hue bloom hue:0200:00178828a259:4
+
+Color HUE_Bloom_1_Color "Farbe" <colorwheel> (BAD_HUE_BLOOM) {channel="hue:0200:00178828a259:4:color"}
+Dimmer HUE_Bloom_1_Dimmer "Helligkeit" (BAD_HUE_BLOOM) {channel="hue:0200:00178828a259:4:color"}
+Switch HUE_Bloom_1_ONOFF "EIN"(BAD_HUE_BLOOM,ALL_HUE_POWER) {channel="hue:0200:00178828a259:4:color"}
+Switch HUE_Bloom_1_Loop "Loop" (BAD_HUE_BLOOM) {channel="hue:0200:00178828a259:4:effect"}
+
+//hue spot ( gu10 ) hue:0210:00178828a259:6
+Color HUE_SPOT_1_Kueche_Color "Farbe" <colorwheel> (HUE_SPOT_1_Kueche) {channel="hue:0210:00178828a259:6:color"}
+Dimmer HUE_SPOT_1_Kueche_Dimmer "Helligkeit" (HUE_SPOT_1_Kueche) {channel="hue:0210:00178828a259:6:color"}
+Switch HUE_SPOT_1_Kueche_ONOFF "EIN"(HUE_SPOT_1_Kueche,ALL_HUE_POWER) {channel="hue:0210:00178828a259:6:color"}
+Dimmer HUE_SPOT_1_Kueche_TEMP	"Temperatur"(HUE_SPOT_1_Kueche) {channel="hue:0210:00178828a259:6:color_temperature"}
+Switch HUE_SPOT_1_Kueche_Loop "Loop" (HUE_SPOT_1_Kueche) {channel="hue:0210:00178828a259:6:effect"}
+Switch HUE_SPOT_1_Kueche_alert "alert" (ALL_HUE_ALERT) {channel="hue:0210:00178828a259:6:alert"}
+//hue spot ( gu10 ) hue:0210:00178828a259:6
+Color HUE_SPOT_2_Kueche_Color "Farbe" <colorwheel> (HUE_SPOT_2_Kueche) {channel="hue:0210:00178828a259:7:color"}
+Dimmer HUE_SPOT_2_Kueche_Dimmer "Helligkeit" (HUE_SPOT_2_Kueche) {channel="hue:0210:00178828a259:7:color"}
+Switch HUE_SPOT_2_Kueche_ONOFF "EIN"(HUE_SPOT_2_Kueche,ALL_HUE_POWER) {channel="hue:0210:00178828a259:7:color"}
+Dimmer HUE_SPOT_2_Kueche_TEMP "Temperatur"(HUE_SPOT_2_Kueche) {channel="hue:0210:00178828a259:7:color_temperature"}
+Switch HUE_SPOT_2_Kueche_Loop "Loop" (HUE_SPOT_2_Kueche) {channel="hue:0210:00178828a259:7:effect"}
+Switch HUE_SPOT_2_Kueche_alert "alert" (ALL_HUE_ALERT) {channel="hue:0210:00178828a259:7:alert"}

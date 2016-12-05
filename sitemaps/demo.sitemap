@@ -1,0 +1,77 @@
+sitemap demo label="Dani und Karsten Home Automation" {
+
+Frame label="System Information" {
+        Text item=Date
+        Text item=OPENHAB_CPU_LOAD icon="network"
+    }
+Frame label="Übersicht" {
+        Text item=WTH_WC_ist valuecolor=[>25="red",>15="green",>5="orange",<5="blue"]
+        Text item=WTH_WC_soll Text item=WTH_WC_feuchte 
+        Group label="Alle Lampen schalten" item=ALL_LAMPS icon="light"
+    }
+Frame label="Wetter Hanau"{
+		Text item=Temperature_Hanau valuecolor=[>25="red",>15="green",>5="orange",<5="blue"]
+		Text item=Pressure_Hanau
+		Text item=Humidity_Hanau
+		
+		}
+Frame label="Wetter Nieder Beerbach"{
+		Text item=Temperature_Beerbach valuecolor=[>25="red",>15="green",>5="orange",<5="blue"]
+		Text item=Pressure_Beerbach
+		Text item=Humidity_Beerbach	
+		Text item=sunrise
+		Text item=sunset	
+	}
+Frame label="Stockwerke" {
+	Group item=gEG label="Erdgeschoss" icon="groundfloor"
+	Group item=gOG label="Obergeschoss" icon="firstfloor"
+	Group item=OG_Bad label="Bad" icon="bath" 
+}
+Frame label="Temperaturwahl" {
+	Setpoint item=WTH_WC_tempset label="Solltemperatur WC" step=0.5 minValue=15 maxValue=30
+}
+
+Frame label="Sonos" {
+			Group label="Sonos Wohnzimmer" item=gSonos_WZ
+			Group label="Sonos Schlafzimmer" item=gSonos_Bed
+			}
+Frame label="Sicherheit" {
+			Group label="Rauchmelder" item=Rauchmelder icon="alarm"
+			}
+Frame label="Light Control" {
+			Group label="HUE Lampen" item=ALL_HUE icon="colorwheel"
+						}
+						
+Frame label="Steckdosen" {
+		Group label="Homematic" item=ALL_PSM icon="poweroutlet"
+		Text item=homematic_HMIP_PSM_16f9813e_0001D3C99613A0_6_ENERGY_COUNTER label="enery counter"
+}
+
+Frame label="Offene Fenster"
+	{
+	Text item=Fenster_State_WC label="Fenster WC" visibility=[Fenster_State_WC==OPEN]
+	}
+Frame label="Onyo AV" {
+ //       Switch item=vsx921PowerSwitch
+ //       Switch item=vsx921MuteSwitch mappings=[ON="Mute", OFF="Un-Mute"] 
+ //       Slider item=vsx921VolumeDimmer
+ //       Setpoint item=vsx921VolumeNumber minValue=-80"" maxValue="12" step="0.5"
+        	Selection item=ONKYO_AVR_INPUT mappings=[
+        		1="Unity Media",
+        		16="DVR/BDR",
+        		 0="yaVDR",
+        		 2="Xbox",
+        		 5="AppleTV",
+        		 3="AUX",
+        		35="TV/CD",
+        		34="Sonos",
+        		36="tuner",
+        		43="net",
+        		41="USB",
+        		46="Bluetooth" 
+        		 ] icon="receiver"
+        	Group item=ALL_ONKYO_INFO icon="receiver"
+        //Text item=vsx921InformationDisplay
+    }
+
+}
