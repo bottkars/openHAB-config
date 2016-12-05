@@ -1,0 +1,2 @@
+##my openHAB config
+
