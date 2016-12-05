@@ -2,5 +2,5 @@ Group ONKYO_INFO "Onkyo Receiver"
 Group ALL_ONKYO_INFO (ONKYO_INFO)
 
 
-Number ONKYO_AVR_INPUT (ALL_ONKYO_INFO)  {channel="onkyo:onkyoAVR:158ce4edf62:input"}
-Switch ONKYO_AVR_POWER (ALL_ONKYO_INFO) {channel="onkyo:onkyoAVR:158ce4edf62:power"}
+Number ONKYO_AVR_INPUT "Eingang: [MAP(onkyo.map):%s]" <receiver> (ALL_ONKYO_INFO)  {channel="onkyo:onkyoAVR:158ce4edf62:input"}
+Switch ONKYO_AVR_POWER "Power On/OFF" (ALL_ONKYO_INFO) {channel="onkyo:onkyoAVR:158ce4edf62:power"}
