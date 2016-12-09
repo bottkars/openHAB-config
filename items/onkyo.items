@@ -1,5 +1,5 @@
-Group ONKYO_INFO "Onkyo Receiver" 
-Group ALL_ONKYO_INFO (ONKYO_INFO)
+Group gONKYO_INFO "Onkyo Receiver" 
+Group gALL_ONKYO_INFO (ONKYO_INFO)
 
 
 Number ONKYO_AVR_INPUT "Eingang: [MAP(onkyo.map):%s]" <receiver> (ALL_ONKYO_INFO)  {channel="onkyo:onkyoAVR:158ce4edf62:input"}

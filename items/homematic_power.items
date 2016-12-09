@@ -1,12 +1,51 @@
 //Groups
 
-Group ALL_PSM
-Group PSM_1_WZ "Steckdose1" <poweroutlet> (ALL_PSM)
+Group gALL_PSM
+Group gPSM_1_WZ <poweroutlet> (gALL_PSM)
+Group gPSM_2_WZ <poweroutlet> (gALL_PSM)
+Group gPower_Verbrauch
+Group gPower_Leistung
+Group gPower_Stromstaerke
 
-Switch PSM_1_WZ_SWITCH (PSM_1_WZ)  {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:3#STATE"}
-String PSM_1_WZ_COUNTER  <poweroutlet> (PSM_1_WZ) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#ENERGY_COUNTER"}
-String PSM_1_WZ_POWER   <poweroutlet> (PSM_1_WZ) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#POWER"}
-String PSM_1_WZ_aufnahme <poweroutlet> (PSM_1_WZ) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#CURRENT"}
+Switch PSM_1_WZ_SWITCH (gPSM_1_WZ)  {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:3#STATE"}
+Number PSM_1_WZ_Verbrauch  <poweroutlet> (gPSM_1_WZ,gPower_Verbrauch) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#ENERGY_COUNTER"}
+Number PSM_1_WZ_Leistung   <poweroutlet> (gPSM_1_WZ,gPower_Leistung) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#POWER"}
+Number PSM_1_WZ_Stromstaerke <poweroutlet> (gPSM_1_WZ,gPower_Stromstaerke) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99613A0:6#CURRENT"}
 
 
-Switch Licht_EG_WZ      "Stehlampe"  (EG_WZ,ALL_PSM) {channel="homematic:HMIP-PS:16f9813e:00021569960DA3:3#STATE"}
+Switch PSM_2_WZ_SWITCH (gPSM_2_WZ)  {channel="homematic:HMIP-PSM:16f9813e:0001D3C99615FD:3#STATE"}
+Number PSM_2_WZ_Verbrauch  <poweroutlet> (gPSM_2_WZ,gPower_Verbrauch) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99615FD:6#ENERGY_COUNTER"}
+Number PSM_2_WZ_Leistung   <poweroutlet> (gPSM_2_WZ,gPower_Leistung) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99615FD:6#POWER"}
+Number PSM_2_WZ_Stromstaerke <poweroutlet> (gPSM_2_WZ,gPower_Stromstaerke) {channel="homematic:HMIP-PSM:16f9813e:0001D3C99615FD:6#CURRENT"}
+
+Group gALL_FRITZ200
+
+
+Group gFRITZ200_Birdies "Steckdose Birdies" <poweroutlet> (gALL_PSM)
+Number FRITZ200_Birdies_Verbrauch  <poweroutlet> (gFRITZ200_Birdies,gPower_Verbrauch) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147772:energy"}
+Number FRITZ200_Birdies_Leistung   <poweroutlet> (gFRITZ200_Birdies,gPower_Leistung) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147772:power"}
+Switch FRITZ200_Birdies_Switch <poweroutlet> (gFRITZ200_Birdies) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147772:outlet"}
+Number FRITZ200_Birdies_Temperatur <poweroutlet> (gFRITZ200_Birdies,gROOM_TEMP_ALL) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147772:temperature"}
+
+Group gFRITZ200_ESPRESSO "Steckdose ESPRESSO" <poweroutlet> (gALL_PSM)
+Number FRITZ200_ESPRESSO_Verbrauch  <poweroutlet> (gFRITZ200_ESPRESSO,gPower_Verbrauch) {channel="avmfritz:FRITZ_DECT_200:ad07f2a1:087610147315:energy"}
+Number FRITZ200_ESPRESSO_Leistung   <poweroutlet> (gFRITZ200_ESPRESSO,gPower_Leistung) {channel="avmfritz:FRITZ_DECT_200:ad07f2a1:087610147315:power"}
+Switch FRITZ200_ESPRESSO_Switch <poweroutlet> (gFRITZ200_ESPRESSO) {channel="avmfritz:FRITZ_DECT_200:ad07f2a1:087610147315:outlet"}
+Number FRITZ200_ESPRESSO_Temperatur <poweroutlet> (gFRITZ200_ESPRESSO,gROOM_TEMP_ALL) {channel="avmfritz:FRITZ_DECT_200:ad07f2a1:087610147315:temperature"}
+
+Group gFRITZ200_LICHTFUNK "Steckdose LICHTFUNK" <poweroutlet> (gALL_PSM)
+Number FRITZ200_LICHTFUNK_Verbrauch  <poweroutlet> (gFRITZ200_LICHTFUNK,gPower_Verbrauch) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610278593:energy"}
+Number FRITZ200_LICHTFUNK_Leistung   <poweroutlet> (gFRITZ200_LICHTFUNK,gPower_Leistung) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610278593:power"}
+Switch FRITZ200_LICHTFUNK_Switch <poweroutlet> (gFRITZ200_LICHTFUNK) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610278593:outlet"}
+Number FRITZ200_LICHTFUNK_Temperatur <poweroutlet> (gFRITZ200_LICHTFUNK) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610278593:temperature"}
+
+Group gFRITZ200_FRIDGE "Steckdose FRIDGE" <poweroutlet> (gALL_PSM)
+Number FRITZ200_FRIDGE_Verbrauch  <poweroutlet> (gFRITZ200_FRIDGE,gPower_Verbrauch) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147323:energy"}
+Number FRITZ200_FRIDGE_Leistung   <poweroutlet> (gFRITZ200_FRIDGE,gPower_Leistung) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147323:power"}
+Switch FRITZ200_FRIDGE_Switch <poweroutlet> (gFRITZ200_FRIDGE) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147323:outlet"}
+Number FRITZ200_FRIDGE_Temperatur <poweroutlet> (gFRITZ200_FRIDGE,gROOM_TEMP_ALL) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147323:temperature"}
+
+
+//avmfritz:FRITZ_DECT_200:192_168_1_1:087610147323:energy
+
+Switch Licht_EG_WZ      "Stehlampe"  (gEG_WZ,gALL_PSM) {channel="homematic:HMIP-PS:16f9813e:00021569960DA3:3#STATE"}

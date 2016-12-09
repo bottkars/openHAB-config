@@ -1,4 +1,5 @@
-Group ALL_SYSTEM_INFO
-Group SYTEM_INFO "Syteminformationen" <poweroutlet> (ALL_SYSTEM_INFO)
+Group gSystemCPU
+Group gALL_SYSTEM_INFO
+Group gSYTEM_INFO "Syteminformationen" <poweroutlet> (ALL_SYSTEM_INFO)
 
-String OPENHAB_CPU_LOAD "CPU Load [%d %%]"(ALL_SYSTEM_INFO)  {channel="systeminfo:computer:openhab:cpu#load"}
+Number OPENHAB_CPU_LOAD "CPU Load [%.1f %%]"(gALL_SYSTEM_INFO,gSystemCPU)  {channel="systeminfo:computer:openhab:cpu#load1"}

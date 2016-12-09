@@ -1,5 +1,5 @@
-Switch Alarmtest "Alarmtest" <alarm> (Rauchmelder,ALL_HUE_ALERT)
-Switch ALL_SMOKE_ALERTTEST "Alarmtest Rauchmelder" <alarm> (Rauchmelder)
-Group ALL_LAMPS
-Switch ALL_HUE_SWITCH (ALL_LAMPS)
-Switch ALL_HUE_ALERTTEST  <alarm> (ALL_LAMPS)
+Switch Alarmtest "Alarmtest" <siren> (Rauchmelder)
+Switch ALL_SMOKE_ALERTTEST "Alarmtest Rauchmelder" <siren> (Rauchmelder)
+Group gALL_LAMPS 
+Switch ALL_HUE_SWITCH //(gALL_HUE
+

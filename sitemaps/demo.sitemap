@@ -7,7 +7,8 @@ Frame label="System Information" {
 Frame label="Übersicht" {
         Text item=WTH_WC_ist valuecolor=[>25="red",>15="green",>5="orange",<5="blue"]
         Text item=WTH_WC_soll Text item=WTH_WC_feuchte 
-        Group label="Alle Lampen schalten" item=ALL_LAMPS icon="light"
+		Group item=gROOM_TEMP_ALL label="Raumtemperaturen" icon="temperature" //raum
+		Group item=gROOM_HUMID_ALL label="Raumfeuchtigkeit" icon="humidity" //raum
     }
 Frame label="Wetter Hanau"{
 		Text item=Temperature_Hanau valuecolor=[>25="red",>15="green",>5="orange",<5="blue"]
@@ -25,26 +26,40 @@ Frame label="Wetter Nieder Beerbach"{
 Frame label="Stockwerke" {
 	Group item=gEG label="Erdgeschoss" icon="groundfloor"
 	Group item=gOG label="Obergeschoss" icon="firstfloor"
-	Group item=OG_Bad label="Bad" icon="bath" 
+	Group item=gKE label="Keller" icon="cellar"
 }
 Frame label="Temperaturwahl" {
 	Setpoint item=WTH_WC_tempset label="Solltemperatur WC" step=0.5 minValue=15 maxValue=30
+	Group item=gWTH_ALL 
 }
 
 Frame label="Sonos" {
-			Group label="Sonos Wohnzimmer" item=gSonos_WZ
-			Group label="Sonos Schlafzimmer" item=gSonos_Bed
+			Group label="Sonos Esszimmer" item=gSonos_WZ
+			Group label="Sonos Schalfzimmer" item=gSonos_Bed
+			Group label="Sonos Wohnzimmer" item=gSonos_WZ2
 			}
 Frame label="Sicherheit" {
-			Group label="Rauchmelder" item=Rauchmelder icon="alarm"
+			Group label="Rauchmelder" item=gRauchmelder icon="siren"
 			}
 Frame label="Light Control" {
-			Group label="HUE Lampen" item=ALL_HUE icon="colorwheel"
-						}
+			Group label="HUE Lampen" item=gALL_HUE icon="colorwheel"
+			Selection label="Hue Alarm" item=gALL_HUE_ALERT mappings=[
+        		LSELECT="langer alarm",
+        		SELECT="kurzer alarm",
+        		NONE="alarm aus"
+        		 ] icon="siren"
+        	Switch label="All Hue Color Loop" item=gALL_HUE_LOOP icon="colorwheel"
+        	Slider item=gHUE_SLIDER_1_EZ  label="Hue Esstisch [(%.1f)]"
+        	Colorpicker item=gHUE_COLORSELECT_1_EG label="Farbwahl EG" icon="colorwheel"
+        	Colorpicker item=gHUE_COLORSELECT_1_Kueche label="Farbwahl Kueche"  icon="colorwheel"
+        	Group label="Alle Lampen schalten" item=gALL_LAMPS icon="light"
+	       	Selection item=gALL_HUE_POWER label="Alle HUE Lampen Schalten" icon="colorwheel" mappings=[
+	       		 "ON"="alle an", "OFF"="alle aus" ]
+	       							}
 						
 Frame label="Steckdosen" {
-		Group label="Homematic" item=ALL_PSM icon="poweroutlet"
-		Text item=homematic_HMIP_PSM_16f9813e_0001D3C99613A0_6_ENERGY_COUNTER label="enery counter"
+		Group label="Alle" item=gALL_PSM icon="poweroutlet"
+		//Text item=homematic_HMIP_PSM_16f9813e_0001D3C99613A0_6_ENERGY_COUNTER label="enery counter"
 }
 
 Frame label="Offene Fenster"
@@ -70,7 +85,7 @@ Frame label="Onyo AV" {
         		41="USB",
         		46="Bluetooth" 
         		 ] icon="receiver"
-        	Group item=ALL_ONKYO_INFO icon="receiver"
+        	Group item=gALL_ONKYO_INFO icon="receiver"
         //Text item=vsx921InformationDisplay
     }
 

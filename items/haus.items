@@ -1,36 +1,35 @@
 // Gruppen
-// Gruppen
 Group gEG   // Gruppe Erdgeschoss
 Group gOG   // Gruppe Obergeschoss
-
-Group OG_Schlafzimmer   "Schlafzimmer"  <bedroom>   (gOG)
+Group gKE   //Gruppe Keller
+Group gOG_Schlafzimmer   "Schlafzimmer"  <bedroom>   (gOG)
+Group gROOM_HUMID_ALL
+Group gROOM_TEMP_ALL //alle raumtemperaturen
+Group gWTH_ALL <temperature>
 
 //Group OG_Kinderzimmer1  "Kinderzimmer1" <boy1>      (gOG)
 //Group OG_Kinderzimmer2  "Kinderzimmer2" <child2>    (gOG)
-Group OG_Bad        "Bad"       <bath>      (gOG)
-Group OG_Flur       "Flur OG"           (gOG)
-Group OG_WC        "WC"       <toilet>      (gOG)
+Group gOG_Bad        "Bad"       <bath>      (gOG)
+Group gOG_Flur       "Flur OG"           (gOG)
+Group gOG_WC        "WC"       <toilet>      (gOG)
 
 
-Group EG_Kueche     "Kueche"    <kitchen>   (gEG)
-Group EG_Esszimmer      "Esszimmer"     <pantry>    (gEG)
-Group EG_WC         "WC"        <bath>      (gEG)
-Group EG_WZ     "Wohnzimmer"    <sofa>      (gEG)
+Group gEG_Kueche     "Kueche"    <kitchen>   (gEG)
+Group gEG_Esszimmer      "Esszimmer"     <pantry>    (gEG)
+Group gEG_WC         "WC"        <bath>      (gEG)
+Group gEG_WZ     "Wohnzimmer"    <sofa>      (gEG)
 //Group EG_Abstellraum    "Abstellraum"   <wardrobe2> (gEG)
-//Group EG_Flur       "Flur EG"           (gEG)
+Group gEG_Flur       "Flur EG"           (gEG)
 //sammelgruppen
-Group ALL_Windows  "Fenster" <window>
-Group Rauchmelder  "Rauchmelder" <alarm>
+Group gALL_Windows  "Fenster" <window>
+Group gRauchmelder  "Rauchmelder" <siren>
 /*Licht*/
-//Switch Licht_OG_Kinderzimmer1   "Licht Kinderzimmer1"   (OG_Kinderzimmer1)
-//Switch Licht_OG_Kinderzimmer2   "Licht Kinderzimmer2"   (OG_Kinderzimmer2)
-//Switch Licht_OG_Bad_Spiegel     "Licht Spiegelschrank"  (OG_Bad)
-//Switch Licht_OG_Flur        "Licht Flur/Treppe OG"  (OG_Flur)
-Switch Licht_EG_Kueche      	"Licht Kueche"      (EG_Kueche)
-Switch Licht_EG_Esszimmer       "Licht Esszimmer"   (EG_Esszimmer)
-Switch Licht_EG_WC          	"Licht WC"      (EG_WC)
-Switch Licht_EG_Abstellraum     "Licht Abstellraum" (EG_Abstellraum)
-Switch Licht_EG_Flur        	"Licht Flur/Treppe EG"  (EG_Flur)
+
+Switch Licht_EG_Kueche      	"Licht Kueche"      (gEG_Kueche)
+Switch Licht_EG_Esszimmer       "Licht Esszimmer"   (gEG_Esszimmer)
+Switch Licht_EG_WC          	"Licht WC"      (gEG_WC)
+Switch Licht_EG_Abstellraum     "Licht Abstellraum" (gEG_Abstellraum)
+Switch Licht_EG_Flur        	"Licht Flur/Treppe EG"  (gEG_Flur)
 
 /*Dimmer*/
 //Dimmer Licht_OG_Schlafzimmer    "Licht Schlafzimmer"    (OG_Schlafzimmer)
@@ -38,13 +37,23 @@ Switch Licht_EG_Flur        	"Licht Flur/Treppe EG"  (EG_Flur)
 
  
 //*Heizung*//[%.1f °C]
-Number TH_WC_ist   "TH Bad [%.1f °C]"  	<temperature>   (OG_WC)      	{channel="homematic:HMIP-eTRV:16f9813e:000393C9927CB6:1#ACTUAL_TEMPERATURE" }
-Number TH_WC_soll  "Soll [%.1f °C]"   		<temperature>   (OG_WC)      	{channel="homematic:HMIP-eTRV:16f9813e:000393C9927CB6:1#SET_POINT_TEMPERATURE" } 
-Number WTH_WC_ist "WTH [%.1f °C]"	<temperature>   (OG_WC)      	{channel="homematic:HMIP-WTH:16f9813e:000313C9954A99:1#ACTUAL_TEMPERATURE" }
-Number WTH_WC_soll "Soll [%.1f °C]"        	<temperature>   (OG_WC)      	{channel="homematic:HMIP-WTH:16f9813e:000313C9954A99:1#SET_POINT_TEMPERATURE" }
-Number WTH_WC_feuchte "Luftfeuchte Bad [%d %%]"  	<humidity> 		(OG_WC) 		{channel="homematic:HMIP-WTH:16f9813e:000313C9954A99:1#HUMIDITY" }
-Number WTH_WC_tempset "Solltemperatur [%d °C]" <temperature> (OG_WC,ALL_BATHROOMS) { channel="homematic:HMIP-WTH:16f9813e:000313C9954A99:1#SET_POINT_TEMPERATURE" }
+Number TH_WC_ist   "Ist [%.1f °C]"  	<temperature>   (gOG_WC)      	{channel="homematic:HMIP-eTRV:16f9813e:000393C9927CB6:1#ACTUAL_TEMPERATURE" }
+Number TH_WC_soll  "Ist [%.1f °C]"   		<temperature>   (gOG_WC)      	{channel="homematic:HMIP-eTRV:16f9813e:000393C9927CB6:1#SET_POINT_TEMPERATURE" } 
+Group gWTH_1_WC_1 <temperature> (gWTH_ALL)
+Number WTH_WC_ist "Ist [%.1f °C]"	<temperature>   (gOG_WC,gROOM_TEMP_ALL,gWTH_1_WC_1)      	{channel="homematic:HMIP-WTH:16f9813e:000313C9954A99:1#ACTUAL_TEMPERATURE" }
+Number WTH_WC_soll "Soll [%.1f °C]"        	<temperature>   (gOG_WC, gWTH_1_WC_1)      	{channel="homematic:HMIP-WTH:16f9813e:000313C9954A99:1#SET_POINT_TEMPERATURE" }
+Number WTH_WC_feuchte "Luftfeuchte [%d %%]"  <humidity> (gOG_WC, gROOM_HUMID_ALL,gWTH_1_WC_1) {channel="homematic:HMIP-WTH:16f9813e:000313C9954A99:1#HUMIDITY" }
+Number WTH_WC_tempset "Setpoint [%d °C]" <temperature> (gOG_WC, gWTH_1_WC_1) { channel="homematic:HMIP-WTH:16f9813e:000313C9954A99:1#SET_POINT_TEMPERATURE" }
 
+
+Group gWTH_2_WZ_1 <temperature> (gWTH_ALL) 
+Number WTH_2_WZ_1_ist "Ist [%.1f °C]"	<temperature>   (gEG_WZ, gROOM_TEMP_ALL, gWTH_2_WZ_1)      	{channel="homematic:HMIP-WTH:16f9813e:000313C9954DF9:1#ACTUAL_TEMPERATURE" }
+Number WTH_2_WZ_1_soll "Soll [%.1f °C]" <temperature>   (gEG_WZ,gWTH_2_WZ_1)      	{channel="homematic:HMIP-WTH:16f9813e:000313C9954DF9:1#SET_POINT_TEMPERATURE" }
+Number WTH_2_WZ_1_feuchte "Luftfeuchte [%d %%]" <humidity> (gEG_WZ,gROOM_HUMID_ALL, gWTH_2_WZ_1) {channel="homematic:HMIP-WTH:16f9813e:000313C9954DF9:1#HUMIDITY" }
+Number WTH_2_WZ_1_tempset "Setpoint [%d °C]" <temperature> (gEG_WZ,gWTH_2_WZ_1) { channel="homematic:HMIP-WTH:16f9813e:000313C9954DF9:1#SET_POINT_TEMPERATURE" }
+
+
+Number FRITZ200_Birdies_Temperatur1 <poweroutlet> (gROOM_TEMP_ALL) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147772:temperature"}
 
 /*Sensoren*/
-String Fenster_State_WC "Fenster WC [%s]" <window> (ALL_Windows, OG_WC)	{channel="homematic:HMIP-SWDO:16f9813e:0000D3C996088A:1#STATE"}
+String Fenster_State_WC "Fenster WC [%s]" <window> (gALL_Windows, gOG_WC)	{channel="homematic:HMIP-SWDO:16f9813e:0000D3C996088A:1#STATE"}

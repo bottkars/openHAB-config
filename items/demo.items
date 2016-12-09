@@ -1,20 +1,3 @@
-Group gSonos_Bed <player>
-Player Sonos_Controller   "Controller"                          (gSonos_Bed) {channel="sonos:PLAY1:RINCON_5CAAFD47051C01400:control"}
-Dimmer Sonos_Volume       "Volume [%.1f %%]" <soundvolume>      (gSonos_Bed) {channel="sonos:PLAY1:RINCON_5CAAFD47051C01400:volume"}
-Switch Sonos_Mute         "Mute"             <soundvolume_mute> (gSonos_Bed) {channel="sonos:PLAY1:RINCON_5CAAFD47051C01400:mute"}
-Switch Sonos_LED          "LED"              <switch>           (gSonos_Bed) {channel="sonos:PLAY1:RINCON_5CAAFD47051C01400:led"}
-String Sonos_CurrentTitle "Now playing [%s]"              		(gSonos_Bed) {channel="sonos:PLAY1:RINCON_5CAAFD47051C01400:currenttitle"}
-String Sonos_CurrentArtist "From [%s]" 		         			(gSonos_Bed) {channel="sonos:PLAY1:RINCON_5CAAFD47051C01400:currentartist"}
-String Sonos_State        "Status [%s]"     	             	(gSonos_Bed) {channel="sonos:PLAY1:RINCON_5CAAFD47051C01400:state"}
-
-Group gSonos_WZ <player>
-Player Sonos_Controller1   "Controller"                          (gSonos_WZ) {channel="sonos:PLAY1:RINCON_5CAAFD4703E801400:control"}
-Dimmer Sonos_Volume1       "Volume [%.1f %%]" <soundvolume>      (gSonos_WZ) {channel="sonos:PLAY1:RINCON_5CAAFD4703E801400:volume"}
-Switch Sonos_Mute1         "Mute"             <soundvolume_mute> (gSonos_WZ) {channel="sonos:PLAY1:RINCON_5CAAFD4703E801400:mute"}
-Switch Sonos_LED1          "LED"              <switch>           (gSonos_WZ) {channel="sonos:PLAY1:RINCON_5CAAFD4703E801400:led"}
-String Sonos_CurrentTitle1 "Now playing [%s]" 		             (gSonos_WZ) {channel="sonos:PLAY1:RINCON_5CAAFD4703E801400:currenttitle"}
-String Sonos_CurrentArtist1 "From [%s]" 					     (gSonos_WZ) {channel="sonos:PLAY1:RINCON_5CAAFD4703E801400:currentartist"}
-String Sonos_State1        "Status [%s]"      		             (gSonos_WZ) {channel="sonos:PLAY1:RINCON_5CAAFD4703E801400:state"}
 
 Group gWetter_Hanau
 Number Temperature_Hanau	"Temperatur" 	<temperature> 	(gWetter_Hanau)	{ channel="yahooweather:weather:b5afadff:temperature" }
@@ -28,14 +11,7 @@ Number Humidity_Beerbach		"Luftfeuchte" 	<humidity> 	(gWetter_Beerbach)	{ channe
 
 String  Date    "Date [%s]"   <calendar>      { channel="ntp:ntp:f63a8049:string" }
 
-
-//String Sensor_State_Bad	"Sensor [%s]"	<switch>	(gOG)	{channel="homematic:HMIP-SWDO:16f9813e:0000D3C996088A:1#STATE"}
-
-//Number Thermostat_Bad	"Temperatur [%.1f °C]"	<temperature>	(gOG)	{channel="homematic:HMIP-eTRV:16f9813e:000393C9927CB6:1#ACTUAL_TEMPERATURE"}
-//Number Temp_Soll	"Soll [%.1f °C]"	<temperature>	(gOG)	{channel="homematic:HMIP-eTRV:16f9813e:000393C9927CB6:1#SET_POINT_TEMPERATURE"}
-
-
 DateTime sunrise "Sonnenaufgang" <sunrise> {channel="astro:sun:local:rise#start"}
 DateTime sunset "Sonnenuntergang" <sunset> {channel="astro:sun:local:set#start"}
 //rauchmelder//Type      Name                   "Label"           (Group)
-Switch     SmokeDetectorWZ_Alert   "Rauch_WZ"           (EG_WZ, Rauchmelder) {channel= "homematic:HmIP-SWSD:16f9813e:000A55699D6C49:1#SMOKE_DETECTOR_ALARM_STATUS"}
+Switch     SmokeDetectorWZ_Alert   "Rauch_WZ"           (gEG_WZ, gRauchmelder) {channel= "homematic:HmIP-SWSD:16f9813e:000A55699D6C49:1#SMOKE_DETECTOR_ALARM_STATUS"}
