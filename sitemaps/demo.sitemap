@@ -55,7 +55,15 @@ Frame label="Light Control" {
         	Group label="Alle Lampen schalten" item=gALL_LAMPS icon="light"
 	       	Selection item=gALL_HUE_POWER label="Alle HUE Lampen Schalten" icon="colorwheel" mappings=[
 	       		 "ON"="alle an", "OFF"="alle aus" ]
-	       							}
+       		Selection item=gHUE_COLORSELECT_1_Kueche label="Scenenenwahl Kueche" icon="colorwheel" mappings=[
+       			"82,55,100"="warm",
+       		    "47,75,61"="Dämmerung",	
+       			"OFF"="aus"]
+       		Selection item=gHUE_COLORSELECT_1_EG label="Scenenenwahl EG" icon="colorwheel" mappings=[
+       			"82,55,100"="warm",
+       			"47,75,61"="Dämmerung",
+       			"OFF"="aus"]
+      	       }
 						
 Frame label="Steckdosen" {
 		Group label="Alle" item=gALL_PSM icon="poweroutlet"
@@ -66,7 +74,7 @@ Frame label="Offene Fenster"
 	{
 	Text item=Fenster_State_WC label="Fenster WC" visibility=[Fenster_State_WC==OPEN]
 	}
-Frame label="Onyo AV" {
+Frame label="Onkyo AV" {
  //       Switch item=vsx921PowerSwitch
  //       Switch item=vsx921MuteSwitch mappings=[ON="Mute", OFF="Un-Mute"] 
  //       Slider item=vsx921VolumeDimmer

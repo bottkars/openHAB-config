@@ -22,6 +22,7 @@ Group gEG_WZ     "Wohnzimmer"    <sofa>      (gEG)
 Group gEG_Flur       "Flur EG"           (gEG)
 //sammelgruppen
 Group gALL_Windows  "Fenster" <window>
+Group gALL_Window_state "Fenster" <window>
 Group gRauchmelder  "Rauchmelder" <siren>
 /*Licht*/
 
@@ -56,4 +57,4 @@ Number WTH_2_WZ_1_tempset "Setpoint [%d °C]" <temperature> (gEG_WZ,gWTH_2_WZ_1)
 Number FRITZ200_Birdies_Temperatur1 <poweroutlet> (gROOM_TEMP_ALL) {channel="avmfritz:FRITZ_DECT_200:192_168_1_1:087610147772:temperature"}
 
 /*Sensoren*/
-String Fenster_State_WC "Fenster WC [%s]" <window> (gALL_Windows, gOG_WC)	{channel="homematic:HMIP-SWDO:16f9813e:0000D3C996088A:1#STATE"}
+String Fenster_State_WC "Fenster WC [%s]" <window> (gALL_Windows, gALL_Window_state, gOG_WC)	{channel="homematic:HMIP-SWDO:16f9813e:0000D3C996088A:1#STATE"}

@@ -17,10 +17,11 @@ Group gHUE_IRIS_2_WZ "HUE Iris TV Rechts" <colorwheel> (gEG_WZ, gALL_HUE)
 Group gHUE_COLOR_1_EZ "HUE LED EZ Bank" <colorwheel> (gEG_Esszimmer, gALL_HUE)
 Group gHUE_COLOR_2_EZ "HUE LED Fenster EZ" <colorwheel> (gEG_Esszimmer, gALL_HUE)
 Group gHUE_BLOOM_1_Bad "HUE Bloom Bad" <colorwheel> (gOG_BAD, gALL_HUE)
-Group gHUE_SPOT_1_Kueche "HUE_SPOT_1_Kueche" <colorwheel> (gEG_Kueche, gALL_HUE)
-Group gHUE_SPOT_2_Kueche "HUE_SPOT_2_Kueche" <colorwheel> (gEG_Kueche, gALL_HUE)
-Group gHUE_COLOR_1_Flur "HUE_SPOT_1_Flur" <colorwheel> (gEG_Flur, gALL_HUE)
-Group gHUE_COLOR_2_Flur "HUE_SPOT_2_Flur" <colorwheel> (gEG_Flur, gALL_HUE)
+Group gHUE_SPOT_1_Kueche "HUE SPOT 1 Kueche" <colorwheel> (gEG_Kueche, gALL_HUE)
+Group gHUE_SPOT_2_Kueche "HUE SPOT 2 Kueche" <colorwheel> (gEG_Kueche, gALL_HUE)
+Group gHUE_COLOR_1_Flur "HUE SPOT 1 Flur" <colorwheel> (gEG_Flur, gALL_HUE)
+Group gHUE_COLOR_2_Flur "HUE SPOT 2 Flur" <colorwheel> (gEG_Flur, gALL_HUE)
+Group gHUE_GO_1_WC_1 "HUE WC OG" <colorwheel> (gOG_WC, gALL_HUE)
 
 Group gHUE_WHITE_1_ESSZIMMER "HUE Esstisch 1" <light> (gEG_Esszimmer, gALL_HUE)
 Group gHUE_WHITE_2_ESSZIMMER "HUE Esstisch 2" <light> (gEG_Esszimmer, gALL_HUE)
@@ -59,7 +60,7 @@ Dimmer HUE_STRIP_Kueche_TEMP	"Temperatur"(gHUE_STRIP_1_Kueche) {channel="hue:020
 Switch HUE_STRIP_Kueche_Loop "Loop" (gHUE_STRIP_1_Kueche, gALL_HUE_LOOP) {channel="hue:0200:00178828a259:3:effect"}
 String HUE_STRIP_Kueche_alert (gALL_HUE_ALERT) {channel="hue:0200:00178828a259:3:alert"}
 //hue
-Color HUE_STRIP_Regal_Flur_Color "Farbe" <colorwheel> (gHUE_STRIP_1_Flur) {channel="hue:0210:00178828a259:15:color"}
+Color HUE_STRIP_Regal_Flur_Color "Farbe" <ColorLight> (gHUE_STRIP_1_Flur) {channel="hue:0210:00178828a259:15:color"}
 Dimmer HUE_STRIP_Regal_Flur_Dimmer "Helligkeit" (gHUE_STRIP_1_Flur) {channel="hue:0210:00178828a259:15:color"}
 Switch HUE_STRIP_Regal_Flur_ONOFF "EIN"(gHUE_STRIP_1_Flur, gALL_HUE_POWER) {channel="hue:0210:00178828a259:15:color"}
 Dimmer HUE_STRIP_Regal_Flur_TEMP	"Temperatur"(gHUE_STRIP_1_Flur) {channel="hue:0210:00178828a259:15:color_temperature"}
@@ -130,6 +131,15 @@ Switch HUE_COLOR_2_Flur_ONOFF "EIN"(gHUE_COLOR_2_Flur, gALL_HUE_POWER) {channel=
 Dimmer HUE_COLOR_2_Flur_TEMP "Temperatur"(gHUE_COLOR_2_Flur) {channel="hue:0210:00178828a259:14:color_temperature"}
 Switch HUE_COLOR_2_Flur_Loop "Loop" (gHUE_COLOR_2_Flur, gALL_HUE_LOOP) {channel="hue:0210:00178828a259:14:effect"}
 String HUE_COLOR_2_Flur_alert (gALL_HUE_ALERT) {channel="hue:0210:00178828a259:14:alert"}
+
+// HUE GO Lams
+//hue:0210:00178828a259:18
+Color HUE_GO_1_WC_1_Color "Farbe" <colorwheel> (gHUE_GO_1_WC_1, gHUE_COLORSELECT_1_EG) {channel="hue:0210:00178828a259:18:color"}
+Dimmer HUE_GO_1_WC_1_Dimmer "Helligkeit" (gHUE_GO_1_WC_1) {channel="hue:0210:00178828a259:18:color"}
+Switch HUE_GO_1_WC_1_ONOFF "EIN"(gHUE_GO_1_WC_1, gALL_HUE_POWER) {channel="hue:0210:00178828a259:18:color"}
+Dimmer HUE_GO_1_WC_1_TEMP "Temperatur"(gHUE_GO_1_WC_1) {channel="hue:0210:00178828a259:18:color_temperature"}
+Switch HUE_GO_1_WC_1_Loop "Loop" (gHUE_GO_1_WC_1, gALL_HUE_LOOP) {channel="hue:0210:00178828a259:18:effect"}
+String HUE_GO_1_WC_1_alert (gALL_HUE_ALERT) {channel="hue:0210:00178828a259:18:alert"}
 
 
 //hue Whitelamps 
